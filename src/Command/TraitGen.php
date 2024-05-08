@@ -156,7 +156,7 @@ trait TraitGen
         $dir = dirname($dirFile);
         @mkdir($dir, 0777, true);
         file_put_contents($dirFile, $content);
-        
+        @exec("vendor/bin/php-cs-fixer fix ".$dirFile);
     }
     
     public function ctrlAction($argv)
