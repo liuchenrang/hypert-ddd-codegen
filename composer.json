@@ -1,0 +1,26 @@
+{
+    "name": "yehwang/codegen",
+    "version": "1.0",
+    "autoload": {
+        "psr-4": {
+            "Yw\\CodeGen\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "刘臣让",
+            "email": "liuchenrang@yehwang.com"
+        }
+    ],
+    "scripts": {
+
+    },
+    "require": {
+        "hyperf/db": "*"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Yw\\CodeGen\\Config\\ConfigProvider"
+        }
+    }
+}
