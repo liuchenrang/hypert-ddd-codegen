@@ -10,12 +10,12 @@ use App\Infrastructure\Model\Model;
 foreach ($fieldsInfo as $field) {
     $type = "mixed";
     if (isset($field['Type'])){
-     if (   strpos($field['Field'], 'int') > -1){
+     if (   strpos($field['Type'], 'int') > -1){
          $type = "int";
-     } if (   strpos($field['Field'], 'char') > -1){
+     } if (   strpos($field['Type'], 'char') > -1){
             $type = "string";
         }
-        if (   strpos($field['Field'], 'datetime') > -1){
+        if (   strpos($field['Type'], 'datetime') > -1){
             $type = "string";
         }
     }

@@ -1,46 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Yw\CodeGen\Command;
 
-use App\Infrastructure\Company\AddressDO;
-use App\Infrastructure\Company\CompanyDO;
-use Hyperf\Command\Annotation\Command;
-use Hyperf\Command\Command as HyperfCommand;
 use Hyperf\Context\ApplicationContext;
-use Psr\Container\ContainerInterface;
-use Symfony\Component\Console\Input\InputArgument;
 use Hyperf\DB\DB;
-use Symfony\Component\Console\Input\InputOption;
 
-#[Command]
-class CurdCommand extends HyperfCommand
+trait TraitGen
 {
-    protected ?string $name = 'curd:command';
-    use TraitGen;
-    
-    
-    public function configure()
-    {
-        parent::configure();
-        $this->addOption('domain', 'm', InputOption::VALUE_REQUIRED, '业务领域', '');
-        $this->addOption('table', 't', InputOption::VALUE_REQUIRED, '数据表', '');
-        $this->addOption('tablePrefix', 'p', InputOption::VALUE_REQUIRED, '数据表前缀', '');
-        $this->addOption('gateway', 'w', InputOption::VALUE_OPTIONAL, '生成gateway', '');
-        $this->addOption('do', 'd', InputOption::VALUE_OPTIONAL, '生成do及entity', '');
-        
-    }
-    
-   
-    
-    public function handle()
-    {
-        $domain = $this->input->getOption('domain') ?? '';
-        $table = $this->input->getOption('table') ?? '';
-        $tablePrefix = $this->input->getOption('tablePrefix') ?? 'wa_';
-        $this->mainAction($domain, $table, $tablePrefix);
-    }
     
     public function mainAction($domain, $table, $tablePrefix, $select = '')
     {
@@ -95,7 +61,7 @@ class CurdCommand extends HyperfCommand
         
         $content = $this->render("GatewayI.php", [
             'domain' => $domain,
-            "namespace" => "App\Domain\\$domain\Gateway;",
+            "namespace" => "App\Domain\\$domain\Gateway",
         ]);
         $this->write(BASE_PATH . "/app/Domain/$domain/Gateway/{$domain}Gateway.php", $content, false);
         
@@ -104,7 +70,6 @@ class CurdCommand extends HyperfCommand
             "namespace" => "App\Infrastructure\\$domain\Gateway",
         ]);
         $this->write(BASE_PATH . "/app/Infrastructure/$domain/Gateway/{$domain}GatewayImpl.php", $content, false);
-        
         
     }
     
@@ -369,5 +334,4 @@ class CurdCommand extends HyperfCommand
         }
         return $data;
     }
-    
 }
