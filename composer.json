@@ -1,6 +1,6 @@
 {
     "name": "yehwang/codegen",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "autoload": {
         "psr-4": {
             "Yw\\CodeGen\\": "src/"
@@ -23,11 +23,9 @@
             "config": "Yw\\CodeGen\\Config\\ConfigProvider"
         },
         "push": {
-            "url": "http://nexus3.orb.local/repository/ywphp",
+            "url": "http://nexus-repository-composer.orb.local/repository/yyphp/",
             "type": "nexus",
-            "ssl-verify": true,
-            "username": "admin",
-            "password": "allgood",
+            "ssl-verify": false,
             "ignore-by-git-attributes": true,
             "ignore": [
                 "test.php",
