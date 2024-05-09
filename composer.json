@@ -23,7 +23,7 @@
             "config": "Yw\\CodeGen\\Config\\ConfigProvider"
         },
         "push": {
-            "url": "http://nexus-repository-composer.orb.local/repository/yyphp/",
+            "url": "http://nexus.gaia888.com:8383/repository/ywphp/",
             "type": "nexus",
             "ssl-verify": false,
             "ignore-by-git-attributes": true,
