@@ -27,7 +27,6 @@
             "type": "nexus",
             "ssl-verify": true,
             "username": "admin",
-            "password": "allgood",
             "ignore-by-git-attributes": true,
             "ignore": [
                 "test.php",
