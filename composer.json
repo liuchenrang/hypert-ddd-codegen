@@ -1,6 +1,6 @@
 {
     "name": "yehwang/codegen",
-    "version": "1.0",
+    "version": "1.0.1",
     "autoload": {
         "psr-4": {
             "Yw\\CodeGen\\": "src/"
@@ -21,6 +21,26 @@
     "extra": {
         "hyperf": {
             "config": "Yw\\CodeGen\\Config\\ConfigProvider"
+        },
+        "push": {
+            "url": "http://nexus3.orb.local/repository/ywphp",
+            "type": "nexus",
+            "ssl-verify": true,
+            "username": "admin",
+            "password": "allgood",
+            "ignore-by-git-attributes": true,
+            "ignore": [
+                "test.php",
+                "foo/"
+            ]
+        }
+    },
+    "require-dev": {
+        "elendev/composer-push": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "elendev/composer-push": true
         }
     }
 }
