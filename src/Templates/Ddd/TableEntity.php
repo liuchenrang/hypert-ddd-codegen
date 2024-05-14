@@ -5,7 +5,7 @@
 
 
 
-class <?php echo $daoName;?>
+class <?php echo $daoName;?>Entity
 {
 <?php
 foreach ($fieldsInfo as $field) {

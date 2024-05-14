@@ -56,7 +56,7 @@ trait TraitGen
             'tableName' => $tableName
         ]);
         
-        $this->write(BASE_PATH . "/app/Domain/$domain/{$tableModule}.php", $content, true);
+        $this->write(BASE_PATH . "/app/Domain/$domain/{$tableModule}Entity.php", $content, true);
         
         
         $content = $this->render("GatewayI.php", [
