@@ -142,7 +142,7 @@ class CurdCommand extends HyperfCommand
                 if ($exe == 'q'){
                     $suffix = "Qry";
                 }
-                if ($exe == 'u'){
+                if ($exe == 'd'){
                     $suffix = "DelCmd";
                 }
                 if (!$suffix){

@@ -1,6 +1,6 @@
 {
     "name": "yehwang/codegen",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "autoload": {
         "psr-4": {
             "Yw\\CodeGen\\": "src/"
@@ -23,7 +23,7 @@
             "config": "Yw\\CodeGen\\Config\\ConfigProvider"
         },
         "push": {
-            "url": "http://nexus.gaia888.com:8383/repository/ywphp/",
+            "url": "http://nexus.gaia888.com/repository/ywphp/",
             "type": "nexus",
             "ssl-verify": false,
             "ignore-by-git-attributes": true,
